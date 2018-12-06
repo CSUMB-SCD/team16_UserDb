@@ -16,28 +16,28 @@ public class UserController{
     @Autowired
     UserRepository userRepo;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
     @GetMapping("/users")
     public List<User> getAll(){
         List<User> result = userRepo.findAll();
         return result;
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
     @GetMapping("/username/{name}")
     public User getUsername (@PathVariable String name) {
         User result = userRepo.findUser(name);
         return result;
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
     @GetMapping("/password/{pass}")
     public User getPassword (@PathVariable String password) {
         User result = userRepo.findUserbyPassword(password);
         return result;
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
     @GetMapping("/userid/{id}")
     public User getUserId (@PathVariable String id) {
         User result = userRepo.findId(id);
